@@ -18,4 +18,14 @@ public interface GrosseryServiceInterface {
 	void update(GrosseryEntity ge);
 	
 	void deleteById(long id);
+	
+	GrosseryEntity getByPid(int productId);
+	
+	List<GrosseryEntity> findByPrice(int price);
+	
+	List<GrosseryEntity> findByPriceBetween(int start, int end);
+	
+	List<GrosseryEntity> findByQuery(String name, int price);
+	
+	List<GrosseryEntity> sortByPrice();
 }

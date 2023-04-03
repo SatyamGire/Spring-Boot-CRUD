@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.springtest.entiry.GrosseryEntity;
 import com.springtest.repository.GrosseryRepoInterface;
 
@@ -65,5 +66,36 @@ public class GrosseryServiceClass implements GrosseryServiceInterface {
 		Optional<GrosseryEntity> ge=repo.findById((int)id);
 		repo.delete(ge.get());
 	}
+
+	@Override
+	public GrosseryEntity getByPid(int productId) {
+		GrosseryEntity ge=null;
+		List<GrosseryEntity> list=repo.findAll();
+		for(GrosseryEntity temp : list) {
+			if(temp.getProductId()==productId) {
+				ge=temp;
+			}
+		}
+		return ge;
+	}
+
+	@Override
+	public List<GrosseryEntity> findByPrice(int price) {
+		return repo.findByPrice(price);
+	}
 	
+	@Override
+	public List<GrosseryEntity> findByPriceBetween(int start, int end) {
+		return repo.findByPriceBetween(start, end);
+	}
+	
+	@Override
+	public List<GrosseryEntity> findByQuery(String name, int price) {
+		return repo.findByQuery(name, price);
+	}
+	
+	@Override
+	public List<GrosseryEntity> sortByPrice() {
+		return repo.sortByPrice();
+	}
 }

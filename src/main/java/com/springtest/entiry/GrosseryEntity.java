@@ -13,9 +13,11 @@ public class GrosseryEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
+	private int productId;
 	private String name;
 	private int price;
-	
+
+//	we can use lambook also for getters and setter, also not only for getters setters, we can do even more things 
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -37,6 +39,12 @@ public class GrosseryEntity {
 		return price;
 	}
 	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 	@Override
 	public String toString() {
 		return "GrosseryEntity id="+id+"\nname="+name+"\nprice="+price+"";
