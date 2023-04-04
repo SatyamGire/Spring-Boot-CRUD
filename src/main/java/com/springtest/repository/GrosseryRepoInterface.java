@@ -28,3 +28,11 @@ public interface GrosseryRepoInterface extends JpaRepository<GrosseryEntity,Inte
 	@Query(value="select *from grossery order by price desc", nativeQuery=true)
 	public List<GrosseryEntity> sortByPrice();
 }
+
+
+
+
+
+
+
+

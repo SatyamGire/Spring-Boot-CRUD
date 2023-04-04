@@ -1,11 +1,12 @@
 package com.springtest.service;
 
 import java.util.*;
+
 import com.springtest.entiry.GrosseryEntity;
 
 public interface GrosseryServiceInterface {
 	
-	void addData(GrosseryEntity ge);
+	GrosseryEntity addData(GrosseryEntity ge);
 
 	//	GrosseryEntity getById(long id);
 	
@@ -15,7 +16,7 @@ public interface GrosseryServiceInterface {
 	
 	GrosseryEntity getByName(String name);
 	
-	void update(GrosseryEntity ge);
+	GrosseryEntity update(GrosseryEntity ge);
 	
 	void deleteById(long id);
 	

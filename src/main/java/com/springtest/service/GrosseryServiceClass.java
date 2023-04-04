@@ -16,8 +16,8 @@ public class GrosseryServiceClass implements GrosseryServiceInterface {
 	private GrosseryRepoInterface repo;
 	
 	@Override
-	public void addData(GrosseryEntity ge) {
-		repo.save(ge);
+	public GrosseryEntity addData(GrosseryEntity ge) {
+		return repo.save(ge);
 	}
 
 //	this is traditional method ie. we extracted all data by findAll then iterate it to check id 
@@ -55,8 +55,8 @@ public class GrosseryServiceClass implements GrosseryServiceInterface {
 	}
 
 	@Override
-	public void update(GrosseryEntity ge) {
-		repo.save(ge);	
+	public GrosseryEntity update(GrosseryEntity ge) {
+		return repo.save(ge);	
 	}
 
 	@Override
